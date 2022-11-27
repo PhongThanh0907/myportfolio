@@ -3,9 +3,7 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <header className="sticky top-0 flex justify-between items-center max-w-7xl mx-auto z-20 xl:items-center p-5">
       <motion.div
@@ -30,12 +28,17 @@ const Header = (props: Props) => {
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://www.youtube.com/"
+          url="https://www.facebook.com/profile.php?id=100033127445154"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://www.youtube.com/"
+          url="https://github.com/PhongThanh0907"
+          fgColor="gray"
+          bgColor="transparent"
+        />
+        <SocialIcon
+          url="https://www.linkedin.com/in/phong-ph%E1%BA%A1m-034480248/"
           fgColor="gray"
           bgColor="transparent"
         />

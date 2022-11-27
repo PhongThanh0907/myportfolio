@@ -4,9 +4,111 @@
 
 @layer components {
     .heroButton {
-        @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#2cf9fa]/40 hover:text-[#2cf9fa]/40 duration-200
+        @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#2cf9fa]/40 hover:text-[#2cf9fa] duration-200
     }
     .contactInput {
         @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#2cf9fa]/40 focus:text-[#2cf9fa]/40
     }
 }
+.heroButton:hover{
+    box-shadow: 0 0 5px #2cf9fa, 0 0 25px #2cf9fa, 0 0 50px #2cf9fa,
+    0 0 200px #2cf9fa;
+}
+
+.ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 195px;
+    font-size: 20px;
+    color: #00f2fe;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #00f2fe;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.ring::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -1.5px;
+    width: 103%;
+    height: 103%;
+    border: 2px solid transparent;
+    border-top: 3px solid #00f2fe;
+    border-right: 3px solid #00f2fe;
+    border-radius: 50%;
+    animation: animateC 2s linear infinite;
+}
+
+.hero-img{
+  animation: rotate 5s linear 2s infinite alternate;
+}
+
+.loading_ring{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 5px;
+    background: transparent;
+    transform-origin: left;
+    animation: animate 2s linear infinite;
+}
+.loading_ring:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #00f2fe;
+    top: -2px;
+    right: -11px;
+    box-shadow: 0 0 20px #00f2fe;
+  }
+  @keyframes animateC {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes animate {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(405deg);
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(2deg);
+    }
+    20% {
+      transform: rotate(-2deg);
+    }
+    40% {
+      transform: rotate(2deg);
+    }
+    60% {
+      transform: rotate(-2deg);
+    }
+    80% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(-2deg);
+    }
+  }

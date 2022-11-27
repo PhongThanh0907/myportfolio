@@ -21,65 +21,66 @@ const Contact = () => {
         ConTact
       </h3>
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
-          Lorem ipsum dolor sit amet.{" "}
+      <div className="flex flex-col space-y-10 pt-10">
+        <h4 className="text-2xl font-semibold text-center xl:py-6">
+          Contact with me.{" "}
           <span className="underline decoration-[#2cf9fa]/50">Let's Talk</span>
         </h4>
+        <div className="xl:grid xl:grid-cols-2 w-[80%] mx-auto ">
+          <div className="space-y-10 pb-4">
+            <div className="flex items-center space-x-5 justify-center xl:justify-start">
+              <PhoneIcon className="text-[#2cf9fa] h-7 w-7 animate-pulse" />
+              <p className="text-xl">0979399509</p>
+            </div>
+            <div className="flex items-center space-x-5 justify-center xl:justify-start">
+              <MapIcon className="text-[#2cf9fa] h-7 w-7 animate-pulse" />
+              <p className="text-xl">Đoan Van Bo P14 Q4 TPHCM</p>
+            </div>
+            <div className="flex items-center space-x-5 justify-center xl:justify-start">
+              <EnvelopeIcon className="text-[#2cf9fa] h-7 w-7 animate-pulse" />
+              <p className="text-xl">phong.thanh971997@gmail.com</p>
+            </div>
+          </div>
 
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#2cf9fa] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+123456789</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <MapIcon className="text-[#2cf9fa] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">123 Lỏrem</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#2cf9fa] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">phong.thanh971997@gmail.com</p>
-          </div>
-        </div>
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
-        >
-          <div className="flex space-x-2">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col space-y-2 w-fit mx-auto"
+          >
+            <div className="flex space-x-2">
+              <input
+                {...register("name")}
+                placeholder="Name"
+                className="contactInput w-1/2"
+                type="text"
+              />
+              <input
+                {...register("email")}
+                placeholder="Email"
+                className="contactInput w-1/2"
+                type="email"
+              />
+            </div>
             <input
-              {...register("name")}
-              placeholder="Name"
+              {...register("subject")}
+              placeholder="Subject"
               className="contactInput"
               type="text"
+              name=""
+              id=""
             />
-            <input
-              {...register("email")}
-              placeholder="Email"
+            <textarea
+              {...register("message")}
+              placeholder="Message"
               className="contactInput"
-              type="email"
             />
-          </div>
-          <input
-            {...register("subject")}
-            placeholder="Subject"
-            className="contactInput"
-            type="text"
-            name=""
-            id=""
-          />
-          <textarea
-            {...register("message")}
-            placeholder="Message"
-            className="contactInput"
-          />
-          <button
-            type="submit"
-            className="bg-[#2cf9fa] py-5 px-10 rounded-md text-black font-bold text-lg"
-          >
-            Submit
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="bg-[#2cf9fa] py-5 px-10 rounded-md text-black font-bold text-lg"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
