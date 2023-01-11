@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import img3 from "../assets/img2.jpg";
 import img2 from "../assets/img3.jpg";
-import img4 from "../assets/img4.jpg";
+import img4 from "../assets/img6.jpg";
 import img5 from "../assets/img5.jpg";
 import img1 from "../assets/project1.jpg";
 import Image from "next/image";
@@ -16,20 +16,27 @@ const Projects = (props: Props) => {
       stt: 1,
       nameProject: "Shop Ecommerce",
       src: img1,
-      linkDemo: "https://shop-ecommerce-clone.vercel.app/",
-      linkRepository: "https://github.com/PhongThanh0907/Shop-Ecommerce",
-      description:
-        "UX/UI, See all products, Shopping cart, Login user, Search product, Responsive",
+      linkDemo: "https://shop-ecommerce-v2.vercel.app/",
+      linkRepository: "https://github.com/PhongThanh0907/Shop-Ecommerce-V2",
+      linkBE: "https://github.com/PhongThanh0907/BE-Ecommerce",
+      description: [
+        "Build user UX/UI",
+        "Show products",
+        "Search by brands, type, price",
+        "Sort",
+        "Shopping Cart",
+        "Others...",
+      ],
       Technologies: [
         "ReactJS",
-        "Typescript",
         "MongoDB",
-        "CSS",
-        "Redux-toolkit",
-        "TailwindCSS",
+        "Typescript",
         "NodeJS",
+        "CSS",
         "Express",
+        "Redux-toolkit",
         "JWT",
+        "TailwindCSS",
         "Others...",
       ],
     },
@@ -39,7 +46,7 @@ const Projects = (props: Props) => {
       src: img2,
       linkDemo: "",
       linkRepository: "https://github.com/PhongThanh0907/cf-house-clone",
-      description: "UX/UI",
+      description: ["UX/UI"],
       Technologies: [
         "ReactJS",
         "Typescript",
@@ -58,14 +65,15 @@ const Projects = (props: Props) => {
       stt: 3,
       nameProject: "My Portfolio",
       src: img3,
-      linkDemo: "https://shop-ecommerce-clone.vercel.app/",
+      linkDemo: "https://myportfolio-mocha-eta.vercel.app/",
       linkRepository: "https://github.com/PhongThanh0907/myportfolio",
-      description: "UX/UI, using animation, show my portfolio",
+      description: ["Build user UX/UI", "Show Information"],
       Technologies: [
         "ReactJS",
         "Typescript",
         "NextJS",
         "CSS",
+        "Framer Motion",
         "TailwindCSS",
         "Animation",
         "Others...",
@@ -73,20 +81,17 @@ const Projects = (props: Props) => {
     },
     {
       stt: 4,
-      nameProject: "BHD Cinema Clone",
+      nameProject: "Shoes Shop",
       src: img4,
-      linkDemo: "https://github.com/PhongThanh0907/movie-app-clone-fe",
-      linkRepository: "https://github.com/PhongThanh0907/movie-app-clone-fe",
-      description: "UX/UI, show movie, booking ticket",
+      linkDemo: "https://shoesshop-mi.vercel.app/",
+      linkRepository: "https://github.com/PhongThanh0907/shoesshop_v2",
+      description: ["Build UX/UI", "Show products", "Build Animation"],
       Technologies: [
         "ReactJS",
         "Typescript",
         "CSS",
         "TailwindCSS",
-        "Redux-Toolkit",
-        "MongoDB",
-        "NodeJS",
-        "Express",
+        "Animation",
       ],
     },
     {
@@ -95,7 +100,7 @@ const Projects = (props: Props) => {
       src: img5,
       linkDemo: "https://movie-app-booking-eight.vercel.app/",
       linkRepository: "https://github.com/PhongThanh0907/movie-app-booking",
-      description: "UX/UI, show movie, booking ticket",
+      description: ["UX/UI, show movie, booking ticket"],
       Technologies: [
         "ReactJS",
         "Typescript",
@@ -120,7 +125,7 @@ const Projects = (props: Props) => {
               alt="as"
               className="h-[200px] w-[600px] xl:h-[400px] mx-auto rounded-lg"
             />
-            <div className="space-y-6 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-3 px-0 md:px-10 max-w-6xl">
               <h4 className="text-3xl font-semibold text-center">
                 <span className="underline decoration-[#2cf9fa]/50">
                   Case {i + 1} of {projects.length}
@@ -129,22 +134,53 @@ const Projects = (props: Props) => {
               </h4>
               <h4>
                 Link Demo:{" "}
-                <Link href={project?.linkDemo}>{project.linkDemo}</Link>{" "}
+                <Link
+                  className="text-gray-400 hover:text-white duration-300"
+                  href={project?.linkDemo}
+                >
+                  {project.linkDemo}
+                </Link>{" "}
               </h4>
               <h4>
-                Link Repository:
-                <Link href={project.linkRepository}>
+                Link Repository:{" "}
+                <Link
+                  className="text-gray-400 hover:text-white duration-300"
+                  href={project.linkRepository}
+                >
                   {project.linkRepository}
                 </Link>{" "}
               </h4>
-              <p className="text-sm text-center md:text-left text-gray-400">
-                {project.description}
-              </p>
-              <ul className="grid grid-cols-3 text-xs md:text-lg">
-                {project.Technologies.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
+              {project.linkBE && (
+                <h4>
+                  Link Backend:{" "}
+                  <Link
+                    className="text-gray-400 hover:text-white duration-300"
+                    href={project.linkRepository}
+                  >
+                    {project.linkBE}
+                  </Link>{" "}
+                </h4>
+              )}
+              <div className="grid grid-cols-2">
+                <div className="col-span-1 flex flex-col">
+                  <h4>Technology:</h4>
+                  <ul className="grid grid-cols-2 text-xs gap-y-3 mt-3 lg:text-[14px] text-gray-400">
+                    {project.Technologies.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="col-span-1">
+                  <h4>
+                    Description:{" "}
+                    <span className="text-gray-400">
+                      {project.description.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </span>
+                  </h4>
+                </div>
+              </div>
             </div>
           </div>
         ))}
